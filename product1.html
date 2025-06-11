@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{title}</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI Rounded', 'Helvetica Neue', sans-serif;
+      background-color: #f9f7f4;
+      color: #333;
+    }
+    header {
+      padding: 20px 60px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 40px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .product-image {
+      width: 100%; max-width: 540px; margin: 0 auto;
+      
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    }
+    .product-info {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .product-info h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .product-info p {
+      font-size: 1.05em;
+      color: #666;
+    }
+    .price {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #c2a77d;
+      font-weight: bold;
+    }
+    .button-group {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .btn {
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 1em;
+      font-weight: 500;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .btn.buy {
+      background-color: #c2a77d;
+      color: white;
+    }
+    .btn.buy:hover {
+      background-color: #aa8d65;
+      transform: scale(1.05);
+    }
+    .btn.back {
+      background-color: #f0efed;
+      color: #444;
+    }
+    .btn.back:hover {
+      background-color: #e2e0dd;
+      transform: scale(1.05);
+    }
+    .details {
+      margin-top: 60px;
+      color: #444;
+      line-height: 1.7;
+    }
+    .details h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .details p {
+      margin-bottom: 30px;
+    }
+    .image-gallery {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .image-gallery img {
+      width: 100%; max-width: 540px; margin: 0 auto;
+      
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .image-gallery img:nth-child(2) { animation-delay: 0.2s; }
+    .image-gallery img:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .specs {
+      margin-top: 40px;
+      background: linear-gradient(to bottom right, #f7f6f3, #f0eeea);
+      padding: 36px 28px;
+      border-left: 6px solid #c2a77d;
+      border-radius: 12px;
+      box-shadow: 0 8px 36px rgba(0, 0, 0, 0.05);
+    }
+    .specs h2 {
+      font-size: 1.45em;
+      margin-bottom: 18px;
+      color: #1e1e1e;
+      font-weight: 600;
+    }
+    .specs ul {
+      list-style: none;
+      padding: 0;
+    }
+    .specs li {
+      margin-bottom: 10px;
+      font-size: 1em;
+      color: #444;
+    }
+    .specs li strong {
+      color: #000;
+    }
+    </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="2.png" alt="Studio.IdoL Logo"></a>
+  </header>
+
+  <div class="container">
+    <img class="product-image" src="4.jpg" alt="{product}">
+    <div class="product-info">
+      <h1>{product}</h1>
+      <p>{description}</p>
+      <div class="price">{price}</div>
+      <div class="button-group">
+    </div>
+    <div class="specs">
+      <h2>Product Specifications</h2>
+      <ul>
+        <li><strong>Fabric:</strong> 100% Wool</li>
+        <li><strong>Fit:</strong> Tailored / Regular</li>
+        <li><strong>Care:</strong> Dry clean only</li>
+        <li><strong>Color:</strong> Ivory Beige</li>
+        <li><strong>Made in:</strong> Korea</li>
+      </ul>
+    </div>
+    <div class="button-group" style="display:none">
+    
+        <a class="btn buy" href="#">Purchase</a>
+        <a class="btn back" href="index.html">Back to Home</a>
+      </div>
+    </div>
+
+    <div class="details">
+      <h2>Product Details</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Integer pretium orci at metus viverra, sed bibendum libero facilisis.</p>
+      <div class="image-gallery">
+        <img src="4.jpg" alt="Detail 1">
+        <img src="4.jpg" alt="Detail 2">
+        <img src="4.jpg" alt="Detail 3">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

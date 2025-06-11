@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Studio.IdoL - Home</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI Rounded', 'Helvetica Neue', sans-serif;
+      background: #f5f4f2;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 64px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 46px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 48px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #1e1e1e;
+      font-weight: 600;
+      font-size: 17px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #c2a77d;
+    }
+
+    .hero {
+      height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to bottom, #fdfcfa, #ebe9e4);
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 4em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1e1e1e;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 1.35em;
+      color: #666;
+      max-width: 640px;
+      margin-bottom: 45px;
+    }
+
+    .cta-button {
+      padding: 16px 40px;
+      font-size: 17px;
+      border: none;
+      border-radius: 32px;
+      background-color: #c2a77d;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta-button:hover {
+      background-color: #aa8d65;
+    }
+
+    .product-preview {
+      background-image: url('https://images.unsplash.com/photo-1585386959984-a4155224f3c4');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 140px 20px;
+      position: relative;
+    }
+
+    .product-preview::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(245, 244, 242, 0.93);
+      backdrop-filter: blur(4px);
+    }
+
+    .product-preview h2 {
+      position: relative;
+      font-size: 2.8em;
+      font-weight: 600;
+      margin-bottom: 80px;
+      color: #1e1e1e;
+      z-index: 1;
+    }
+
+    .product-grid {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1600px;
+      margin: 0 auto;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      flex: 1 1 30%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 12px 50px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .product-card img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .product-card .info {
+      padding: 28px;
+      text-align: center;
+    }
+
+    .product-card h3 {
+      margin: 0;
+      font-size: 1.4em;
+      color: #1e1e1e;
+    }
+
+    .product-card p {
+      color: #888;
+      margin: 14px 0;
+    }
+
+    .view-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 28px;
+      border-radius: 26px;
+      background-color: #c2a77d;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .view-button:hover {
+      background-color: #aa8d65;
+    }
+
+    footer {
+      text-align: center;
+      padding: 70px 20px;
+      font-size: 0.95em;
+      color: #888;
+      background-color: #f0efed;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="2.png" alt="Studio.IdoL Logo"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Your daily style destination</h1>
+    <p>Explore curated fashion that reflects your elegance and individuality.</p>
+    <a href="#product" class="cta-button">Explore New Arrivals</a>
+  </section>
+
+  <section class="product-preview" id="product">
+    <h2>New Arrivals</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="2.png" alt="Product 1">
+        <div class="info">
+          <h3>Classic Blazer</h3>
+          <p>$120</p>
+          <a href="product1.html" class="view-button">View</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="2.png" alt="Product 2">
+        <div class="info">
+          <h3>Modern Coat</h3>
+          <p>$150</p>
+          <a href="product2.html" class="view-button">View</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="2.png" alt="Product 3">
+        <div class="info">
+          <h3>Elegant Dress</h3>
+          <p>$180</p>
+          <a href="product3.html" class="view-button">View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Studio.IdoL. All rights reserved.
+  </footer>
+</body>
+</html>
