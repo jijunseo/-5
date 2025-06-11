@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,14 @@
       background: #f5f4f2;
       color: #222;
       scroll-behavior: smooth;
+      opacity: 0;
+      animation: fadeInBody 1.2s ease forwards;
+    }
+
+    @keyframes fadeInBody {
+      to {
+        opacity: 1;
+      }
     }
 
     header {
@@ -59,6 +68,9 @@
       background: linear-gradient(to bottom, #fdfcfa, #ebe9e4);
       padding: 0 20px;
       position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1.4s ease 0.3s forwards;
     }
 
     .hero h1 {
@@ -101,6 +113,9 @@
       text-align: center;
       padding: 140px 20px;
       position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1.4s ease 0.6s forwards;
     }
 
     .product-preview::before {
@@ -193,9 +208,89 @@
       color: #888;
       background-color: #f0efed;
     }
-  </style>
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #fefefe 0%, #f2f1ed 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      backdrop-filter: blur(10px);
+      animation: splashFadeOut 4s forwards ease;
+    }
+
+    .splash-inner {
+      text-align: center;
+      animation: splashZoom 2s ease-in-out;
+    }
+
+    .splash-inner img {
+      width: 240px;
+      max-width: 70%;
+      filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.12));
+      opacity: 0;
+      animation: splashFadeIn 2s forwards ease;
+    }
+
+    @keyframes splashFadeIn {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+        filter: blur(6px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.03);
+        filter: blur(0);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes splashFadeOut {
+      0%, 85% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes splashZoom {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.02);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+</style>
 </head>
 <body>
+  <div id="splash">
+    <div class="splash-inner">
+      <img src="2.png" alt="Studio.IdoL Logo" />
+    </div>
+  </div>
   <header>
     <a href="index.html"><img src="2.png" alt="Studio.IdoL Logo"></a>
     <nav>
@@ -247,5 +342,14 @@
   <footer>
     &copy; 2025 Studio.IdoL. All rights reserved.
   </footer>
+
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        const splash = document.getElementById('splash');
+        if (splash) splash.style.display = 'none';
+      }, 4000);
+    });
+  </script>
 </body>
 </html>
